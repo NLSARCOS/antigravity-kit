@@ -1,0 +1,211 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+/* ================================
+   LIGHT LIQUID GLASS THEME
+   Translucent, clean, premium
+   ================================ */
+:root {
+  --radius: 0.75rem;
+
+  /* Core surfaces — whites with subtle warmth */
+  --background: oklch(0.99 0.002 240);
+  --foreground: oklch(0.18 0.01 260);
+
+  /* Cards — glass panels */
+  --card: oklch(1 0 0 / 70%);
+  --card-foreground: oklch(0.18 0.01 260);
+
+  /* Popovers */
+  --popover: oklch(1 0 0 / 85%);
+  --popover-foreground: oklch(0.18 0.01 260);
+
+  /* Primary — elegant blue */
+  --primary: oklch(0.55 0.18 250);
+  --primary-foreground: oklch(1 0 0);
+
+  /* Secondary — frosted glass */
+  --secondary: oklch(0.96 0.005 240 / 80%);
+  --secondary-foreground: oklch(0.25 0.01 260);
+
+  /* Muted — whisper soft */
+  --muted: oklch(0.96 0.003 240 / 60%);
+  --muted-foreground: oklch(0.50 0.01 260);
+
+  /* Accent — light glass tint */
+  --accent: oklch(0.95 0.01 240 / 50%);
+  --accent-foreground: oklch(0.22 0.01 260);
+
+  /* Destructive */
+  --destructive: oklch(0.60 0.22 25);
+
+  /* Borders — barely there */
+  --border: oklch(0.88 0.005 240 / 40%);
+  --input: oklch(0.92 0.005 240 / 50%);
+  --ring: oklch(0.55 0.18 250 / 30%);
+
+  /* Charts */
+  --chart-1: oklch(0.55 0.18 250);
+  --chart-2: oklch(0.65 0.15 170);
+  --chart-3: oklch(0.50 0.12 280);
+  --chart-4: oklch(0.75 0.15 80);
+  --chart-5: oklch(0.70 0.18 30);
+
+  /* Sidebar — translucent glass panel */
+  --sidebar: oklch(0.97 0.003 240 / 65%);
+  --sidebar-foreground: oklch(0.22 0.01 260);
+  --sidebar-primary: oklch(0.55 0.18 250);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.55 0.18 250 / 12%);
+  --sidebar-accent-foreground: oklch(0.22 0.01 260);
+  --sidebar-border: oklch(0.88 0.005 240 / 30%);
+  --sidebar-ring: oklch(0.55 0.18 250 / 25%);
+}
+
+/* Dark mode (kept for future toggle) */
+.dark {
+  --background: oklch(0.12 0.005 260);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.16 0.005 260 / 80%);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.16 0.005 260 / 90%);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.65 0.18 250);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.22 0.005 260 / 80%);
+  --secondary-foreground: oklch(0.92 0 0);
+  --muted: oklch(0.22 0.005 260 / 60%);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.22 0.01 260 / 50%);
+  --accent-foreground: oklch(0.92 0 0);
+  --destructive: oklch(0.65 0.22 25);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.65 0.18 250 / 30%);
+  --sidebar: oklch(0.14 0.005 260 / 70%);
+  --sidebar-foreground: oklch(0.92 0 0);
+  --sidebar-primary: oklch(0.65 0.18 250);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.65 0.18 250 / 15%);
+  --sidebar-accent-foreground: oklch(0.92 0 0);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.65 0.18 250 / 25%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply text-foreground;
+    background-color: transparent !important;
+  }
+
+  html {
+    background-color: transparent !important;
+  }
+}
+
+/* ================================
+   LIQUID GLASS UTILITIES
+   ================================ */
+@layer utilities {
+  .glass {
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+  }
+
+  .glass-subtle {
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+  }
+
+  .glass-heavy {
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+  }
+
+  .glass-border {
+    border: 1px solid oklch(0.92 0.005 240 / 40%);
+    box-shadow:
+      0 0 0 0.5px oklch(1 0 0 / 20%) inset,
+      0 1px 3px oklch(0 0 0 / 4%),
+      0 4px 12px oklch(0 0 0 / 3%);
+  }
+
+  .glass-shadow {
+    box-shadow:
+      0 1px 2px oklch(0 0 0 / 3%),
+      0 4px 16px oklch(0 0 0 / 4%),
+      0 12px 40px oklch(0 0 0 / 3%);
+  }
+}
+
+/* Hide all scrollbars globally */
+*,
+html,
+body,
+div,
+main,
+section,
+aside,
+nav {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
